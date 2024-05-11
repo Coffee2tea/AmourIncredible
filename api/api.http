@@ -19,11 +19,25 @@ Content-Type: application/json
 
 ### AI simple example
 
-GET http://localhost:8080/ai/simple?message=are you ok? HTTP/1.1
+GET http://localhost:8080/ai/simple?message=who r u? HTTP/1.1
 
 
 ### Get all scenarios list
 
-GET http://localhost:8080/scenarios HTTP/1.1
+GET http://localhost:8080/api/scenarios HTTP/1.1
 
 
+### new a scenario
+
+POST http://localhost:8080/api/scenarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "hello test",
+    "description": "test",
+    "prompt": "Sure, here's a simple text: The quick brown fox jumps over the lazy dog."
+}
+
+### Delete a scenario
+
+DELETE http://localhost:8080/api/scenarios/2 HTTP/1.1

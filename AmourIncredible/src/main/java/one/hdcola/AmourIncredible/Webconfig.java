@@ -16,6 +16,6 @@ public class Webconfig implements WebMvcConfigurer {
                 .allowedOrigins("*")
                 .allowedMethods(CorsConfiguration.ALL)
                 .allowedHeaders(CorsConfiguration.ALL)
-                .allowCredentials(true);
+                .allowCredentials(false);
     }
 }
