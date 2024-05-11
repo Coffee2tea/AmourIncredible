@@ -70,6 +70,7 @@ button:focus-visible {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-image: url('BG-Challenge2.png');
+  /* background-image: url('BG-Challenge2.png'); */
+  background-color: #fcb4b4;
   z-index: -1;
 }
