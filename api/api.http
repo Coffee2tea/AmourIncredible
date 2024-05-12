@@ -70,8 +70,8 @@ GET http://100.89.152.5:8080/api/scenarios HTTP/1.1
 
 ### new a scenario
 
-POST http://localhost:8080/api/scenarios HTTP/1.1
-Content-Type: application/json
+nPOST http://localhost:8080/api/scenarios HTTP/1.1
+Contet-Type: application/json
 
 {
     "name": "hello test",
