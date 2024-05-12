@@ -23,12 +23,19 @@ function Home() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  // 修改跳转函数以包括 scenarioId
+  const redirectToChat = (scenarioId: number) => {
+    window.location.href = `http://localhost:5173/chat?scenarioId=${scenarioId}`;
+  };
+
   return (
     <div className="game-modes">
       {modes &&
         modes.map((modes, index) => (
           <div className="mode-container" key={index}>
-            <div className="icon">{modes.name}</div>
+            <div className="icon" onClick={() => redirectToChat(modes.id)}>
+              {modes.name}
+            </div>
             <div className="tooltip">{modes.description}</div>
           </div>
         ))}

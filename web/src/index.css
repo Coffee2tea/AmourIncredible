@@ -67,10 +67,8 @@ button:focus-visible {
   }
 } */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  /* background-image: url('BG-Challenge2.png'); */
-  background-color: #fcb4b4;
+  background: linear-gradient(to left, #fcb4b4 , #ff6246);
   z-index: -1;
 }
