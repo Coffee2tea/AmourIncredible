@@ -1,0 +1,10 @@
+### new a scenario
+
+POST http://100.89.152.5:8080/api/scenarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "hello test3",
+    "description": "Sure, here's a simple text: The quick brown fox jumps over the lazy dog.",
+    "prompt": "Next you will play a girlfriend who wants to go to the movies tonight and has bought tickets. And I want to play a game with my friend."
+}
