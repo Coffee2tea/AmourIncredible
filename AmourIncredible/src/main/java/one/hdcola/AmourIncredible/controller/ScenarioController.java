@@ -24,7 +24,7 @@ public class ScenarioController {
 
     // create
     @PostMapping("")
-    public ResponseEntity<ScenarioDto> postMethodName(@RequestBody ScenarioDto scenarioDto) {
+    public ResponseEntity<ScenarioDto> create(@RequestBody ScenarioDto scenarioDto) {
         ScenarioDto createdScenario = scenarioService.create(scenarioDto);
         return ResponseEntity.ok(createdScenario);
     }
@@ -32,19 +32,19 @@ public class ScenarioController {
     // update
     // getById
     @GetMapping("/{id}")
-    public ResponseEntity<ScenarioDto> getMethodName(@PathVariable Long id) {
+    public ResponseEntity<ScenarioDto> getById(@PathVariable Long id) {
         return ResponseEntity.ok(scenarioService.getById(id));
     }
 
     // getAll
     @GetMapping("")
-    public ResponseEntity<List<ScenarioDto>> getMethodName() {
+    public ResponseEntity<List<ScenarioDto>> getAll() {
         return ResponseEntity.ok(scenarioService.getAll());
     }
 
     // delete
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteMethodName(@PathVariable Long id) {
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         scenarioService.delete(id);
         return ResponseEntity.ok("Scenario deleted successfully: " + id);
     }

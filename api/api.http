@@ -4,7 +4,7 @@ POST http://localhost:11434/v1/chat/completions HTTP/1.1
 Content-Type: application/json
 
 {
-    "model": "gemma:7b",
+    "model": "llama3:8b",
     "messages": [
         {
             "role": "system",
@@ -20,6 +20,47 @@ Content-Type: application/json
 ### AI simple example
 
 GET http://localhost:8080/ai/simple?message=who r u? HTTP/1.1
+
+### AI post example
+
+POST http://localhost:8080/api/chat HTTP/1.1
+Content-Type: application/json
+
+{ "messages":[
+    {
+        "role": "system",
+        "content": "Next you will play a girlfriend who wants to go to the movies tonight and has bought tickets. And I want to play a game with my friend.\n\n\nYour reply will be JSON fomat:{'content':string,'mark':int}. content for your reply, which will only be a simple everyday conversation. mark for your happy status of my reply, with negative numbers being unhappy and positive numbers being happy."
+    },
+    {
+        "role": "user",
+        "content": "I want play a game with my friend."
+    },
+    {
+        "role": "assistant",
+        "content": "{ \"content\": \"Aww, but I already have tickets to the movies tonight and it's not fair to just cancel now\", \"mark\": -2 }"
+    },
+    {
+        "role": "user",
+        "content": "I'm sorry, but I really want to play a game with my friend."
+    },
+    {
+        "role": "assistant",
+        "content": "{ \"content\": \"That's sweet of you to want to spend time with your friend, but didn't you already agree to go to the movies? Can't it wait for another night?\",  \"mark\": -1 }"
+    },
+    {
+        "role": "user",
+        "content": "If you are willing to go to the movies by yourself, you will come back at night to a surprise."
+    },
+    {
+        "role": "assistant",
+        "content": "{ \"content\": \"Hmm, I'm not sure... I was really looking forward to our date tonight. But if it's a surprise, maybe I'll give in...\",  \"mark\": -1 }"
+    },
+    {
+        "role": "user",
+        "content": "I'm playing the game because I have to wait for the courier to deliver your favorite lipstick. Aren't you happy?"
+    }
+    ]
+}
 
 
 ### Get all scenarios list
