@@ -24,7 +24,7 @@ GET http://localhost:8080/ai/simple?message=who r u? HTTP/1.1
 
 ### Get all scenarios list
 
-GET http://localhost:8080/api/scenarios HTTP/1.1
+GET http://100.89.152.5:8080/api/scenarios HTTP/1.1
 
 
 ### new a scenario
