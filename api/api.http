@@ -19,11 +19,22 @@ Content-Type: application/json
 
 ### AI simple example
 
-GET http://localhost:8080/ai/simple?message=who r u? HTTP/1.1
+GET http://localhost:9090/ai/simple?message=who r u? HTTP/1.1
 
-### AI post example
+### test request
 
-POST http://localhost:8080/api/chat HTTP/1.1
+POST http://localhost:9090/api/chats?sid=1&cid=1 HTTP/1.1
+Content-Type: application/json
+
+    {
+        "role": "user",
+        "content": "I want play a game with my friend."
+    }
+
+
+### AI move and video game
+
+POST http://localhost:9090/api/chat HTTP/1.1
 Content-Type: application/json
 
 { "messages":[
@@ -58,6 +69,14 @@ Content-Type: application/json
     {
         "role": "user",
         "content": "I'm playing the game because I have to wait for the courier to deliver your favorite lipstick. Aren't you happy?"
+    },
+    {
+        "role": "assistant",
+        "content": "{ \"content\": \"OH MY GOSH, REALLY?! You got my favorite lipstick?! Thank you so much! I'm SO happy now!\" , \"mark\": 8 }"
+    },
+    {
+        "role": "user",
+        "content": "We will go to playground after the movie."
     }
     ]
 }
@@ -65,20 +84,20 @@ Content-Type: application/json
 
 ### Get all scenarios list
 
-GET http://100.89.152.5:8080/api/scenarios HTTP/1.1
+GET http://100.89.152.5:9090/api/scenarios HTTP/1.1
 
 
 ### new a scenario
 
-POST http://localhost:8080/api/scenarios HTTP/1.1
+POST http://localhost:9090/api/scenarios HTTP/1.1
 Content-Type: application/json
 
 {
     "name": "hello test",
-    "description": "test",
-    "prompt": "Sure, here's a simple text: The quick brown fox jumps over the lazy dog."
+    "description": "Sure, here's a simple text: The quick brown fox jumps over the lazy dog.",
+    "prompt": "Next you will play a girlfriend who wants to go to the movies tonight and has bought tickets. And I want to play a game with my friend."
 }
 
 ### Delete a scenario
 
-DELETE http://localhost:8080/api/scenarios/2 HTTP/1.1
+DELETE http://localhost:9090/api/scenarios/2 HTTP/1.1
